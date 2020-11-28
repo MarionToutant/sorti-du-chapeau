@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+
+.App {
+  text-align: center;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+.Header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Comfortaa', cursive;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 10px;
+}
+
+.Logo {
+  margin-right: 10px;
+  margin-top: 0px;
+}
+
+.Body {
+  background-image: url(./wallpaper.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #282c34;
+}
+
+.Col {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.Button {
+  margin: 10px;
+}
+
+.Title {
+  display: flex;
+  justify-content: center;
+}
+
+.Title2 {
+  width: 100%;
+}
+
+h2, p {
+  text-align: center;
+}
