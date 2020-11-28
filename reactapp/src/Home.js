@@ -28,6 +28,15 @@ function Home(props) {
     }
   }
 
+  var handleSendEmail = async () => {
+    var data = props.nameList;
+    await fetch(`/sendEmail`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: data
+    })
+  }
+
   return (
     <div className="App"> 
       <header className="Header">
@@ -35,14 +44,9 @@ function Home(props) {
         Sorti du chapeau
       </header>
       <body className="Body">
+        <h2>1. Ajoute les amis de ton Noël surprise, ton jeu de Killer... &#128512;</h2>  
+        <br/>
         <Container>
-          <Row className="Title">
-            <Card className="Title2">
-              <CardBody>
-                <h2>1. Ajoute les amis de ton Noël surprise, ton jeu de Killer... &#128512;</h2>
-              </CardBody>
-            </Card>
-          </Row>
           <Row className="Input-group" xs="6">
             {nameInputList}
           </Row>
@@ -50,14 +54,8 @@ function Home(props) {
           <Button onClick={() => {handleRemoveInput()}} className="Button" style={{width:'80px'}} type="primary">Retirer</Button>
         </Container>
         <br/>
-        <Row className="Title">
-            <Card className="Title2">
-              <CardBody>
-                <h2>2. Envoie un mail à chacun des amis avec le nom de son ami affecté ! &#128540;</h2>
-              </CardBody>
-            </Card>
-        </Row>
-        <Button className="Button" style={{width:'150px'}} type="primary">Envoyer les mails</Button>
+        <h2>2. Envoie un mail à chacun des amis avec le nom de son ami affecté ! &#128540;</h2>
+        <Button onClick={() => {handleSendEmail()}} className="Button" style={{width:'150px'}} type="primary">Envoyer les mails</Button>
       </body>
     </div>
   );

@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* POST send email */
+router.post('/sendEmail', function(req, res, next) {
+  console.log( req.body );
+  res.render('index', { title: 'Express' });
+});
+
 module.exports = router;
