@@ -29,10 +29,10 @@ function Home(props) {
   }
 
   var handleSendEmail = async () => {
-    var data = props.nameList;
+    var data = JSON.stringify(props.nameList);
     await fetch(`/sendEmail`, {
       method: 'POST',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      headers: {'Content-Type': 'application/json'},
       body: data
     })
   }
