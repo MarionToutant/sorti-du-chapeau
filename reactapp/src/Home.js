@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 function Home(props) {
 
   const [nameInputCount, setNameInputCount] = useState(1);
+  const [backendResponse, setBackendResponse] = useState([]);
   
   console.log(props.nameList);
   console.log(props.nameList.length);
@@ -35,6 +36,11 @@ function Home(props) {
       headers: {'Content-Type': 'application/json'},
       body: data
     })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.message);
+      setBackendResponse(<h2>C'est bon !!</h2>);
+    })
   }
 
   return (
@@ -56,6 +62,8 @@ function Home(props) {
         <br/>
         <h2>2. Envoie un mail à chacun des amis avec le nom de son ami affecté ! &#128540;</h2>
         <Button onClick={() => {handleSendEmail()}} className="Button" style={{width:'150px'}} type="primary">Envoyer les mails</Button>
+        <br/>
+        {backendResponse}
       </body>
     </div>
   );
