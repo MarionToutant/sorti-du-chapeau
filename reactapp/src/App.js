@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Home from './Home.js';
 
@@ -11,7 +12,11 @@ const store = createStore(combineReducers({nameList}));
 function App() {
   return (
     <Provider store={store}>
-      <Home/>
+      <Router>
+        <Switch>
+          <Route component={Home} path="/" exact />
+        </Switch>
+      </Router>
     </Provider>
   );
 }

@@ -10,13 +10,6 @@ function Home(props) {
   const [nameInputCount, setNameInputCount] = useState(1);
   const [backendResponse, setBackendResponse] = useState([]);
 
-  useEffect( () => {
-    async function loadData(){
-      await fetch('/');
-    } 
-    loadData()
-  }, []);
-
   var nameInputList = [];
   for(var i=0; i<nameInputCount; i++){
     nameInputList.push(<PlayerInput id={i}/>);
