@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.json({});
 });
 

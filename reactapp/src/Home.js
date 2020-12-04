@@ -12,8 +12,7 @@ function Home(props) {
 
   useEffect( () => {
     async function loadData(){
-      var rawResponse = await fetch('/home');
-      var responseInit = await rawResponse.json();
+      await fetch('/');
     } 
     loadData()
   }, []);
