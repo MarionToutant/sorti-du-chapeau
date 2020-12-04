@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 import logo from './magic-hat.png';
 import PlayerInput from './components/PlayerInput.js';
-import { Container, Row, Button, Card, CardBody } from 'reactstrap';
+import { Container, Row, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 
 function Home(props) {
 
   const [nameInputCount, setNameInputCount] = useState(1);
   const [backendResponse, setBackendResponse] = useState([]);
-  
-  console.log(props.nameList);
-  console.log(props.nameList.length);
 
   var nameInputList = [];
   for(var i=0; i<nameInputCount; i++){
@@ -38,8 +35,12 @@ function Home(props) {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data.message);
-      setBackendResponse(<h2>C'est bon !!</h2>);
+      console.log(data);
+      if(data === "OK") {
+        setBackendResponse(<h2>Messages envoyés !!!</h2>);
+      } else {
+        setBackendResponse(<h2>Erreur &#128557;... Réessaie avec d'autres données</h2>);
+      } 
     })
   }
 
