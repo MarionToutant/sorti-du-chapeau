@@ -14,7 +14,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route component={Home} path="/" exact />
+          <Route path="/" exact component={Home} />
         </Switch>
       </Router>
     </Provider>

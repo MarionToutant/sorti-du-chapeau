@@ -3,11 +3,6 @@ var router = express.Router();
 const dotenv = require('dotenv');
 dotenv.config();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.json({});
-});
-
 /* POST send email */
 router.post('/sendEmail', async function(req, res, next) {
   
