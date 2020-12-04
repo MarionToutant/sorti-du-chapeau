@@ -4,8 +4,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/home', function(req, res, next) {
+  res.json({});
 });
 
 /* POST send email */

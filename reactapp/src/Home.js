@@ -10,6 +10,8 @@ function Home(props) {
   const [nameInputCount, setNameInputCount] = useState(1);
   const [backendResponse, setBackendResponse] = useState([]);
 
+  fetch("/home");
+
   var nameInputList = [];
   for(var i=0; i<nameInputCount; i++){
     nameInputList.push(<PlayerInput id={i}/>);
