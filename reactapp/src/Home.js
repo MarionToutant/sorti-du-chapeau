@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import logo from './magic-hat.png';
 import PlayerInput from './components/PlayerInput.js';
@@ -10,7 +10,13 @@ function Home(props) {
   const [nameInputCount, setNameInputCount] = useState(1);
   const [backendResponse, setBackendResponse] = useState([]);
 
-  fetch("/home");
+  useEffect( () => {
+    async function loadData(){
+      var rawResponse = await fetch('/home');
+      var responseInit = await rawResponse.json();
+    } 
+    loadData()
+  }, []);
 
   var nameInputList = [];
   for(var i=0; i<nameInputCount; i++){
